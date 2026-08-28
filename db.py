@@ -3,12 +3,20 @@ LandSafe NER — Database layer (SQLite, zero external services needed).
 Stores: monitored zones, prediction history, alerts, citizen/field reports.
 """
 
+import os
 import sqlite3
 from pathlib import Path
 from datetime import datetime, timezone
 from contextlib import contextmanager
 
-DB_PATH = Path(__file__).parent / "landsafe.db"
+# On Vercel (and most serverless platforms) the deployed code directory is
+# READ-ONLY at runtime — only /tmp is writable, and it's wiped between cold
+# starts (so data won't persist across invocations there). Locally, we keep
+# using a normal file next to this script so your data persists as before.
+if os.environ.get("VERCEL"):
+    DB_PATH = Path("/tmp/landsafe.db")
+else:
+    DB_PATH = Path(__file__).parent / "landsafe.db"
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS zones (
