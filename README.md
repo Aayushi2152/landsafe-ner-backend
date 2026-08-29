@@ -87,3 +87,25 @@ index.html        Your existing dashboard (unchanged, still works)
 requirements.txt
 START_SERVER.bat
 ```
+## Screenshots
+
+### Dashboard Overview
+![Dashboard](pictorials/dashboard.png)
+
+### GIS Risk Map
+![GIS Risk Map](pictorials/GIS.png)
+
+### Zone Details
+![Zone Details](pictorials/zone_details.png)
+
+### Alert Center
+![Alerts](pictorials/Alert.png)
+
+### Recent Alerts (Dashboard Widget)
+![Recent Alerts](pictorials/alerts.png)
+
+### Field / Citizen Report
+![Field Report](pictorials/Report.png)
+
+### System Architecture
+![System Architecture](pictorials/Architecture.png)
